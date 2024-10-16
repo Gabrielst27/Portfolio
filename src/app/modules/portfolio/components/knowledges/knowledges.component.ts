@@ -15,7 +15,7 @@ export class KnowledgesComponent {
       alt: 'Icone de conhecimento de html5'
     },
     {
-      src: 'assets/icons/knowledge/javascript.png',
+      src: 'assets/icons/knowledge/javascript.svg',
       alt: 'Icone de conhecimento de javascript'
     },
     {
