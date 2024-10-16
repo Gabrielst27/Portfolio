@@ -1,15 +1,10 @@
 <div class="container">
     <h2>Conhecimentos</h2>
     <ul>
-        <li>
-            <img src="assets/icons/knowledge/nodejs.svg" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/angular.svg" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/typescript.png" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/javascript.png" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/csharp.png" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/html5.svg" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/sass.svg" alt="" loading="lazy" width="25px" height="27px" />
-            <img src="assets/icons/knowledge/css3.svg" alt="" loading="lazy" width="25px" height="27px" />
-        </li>
+        @for(item of arrayKnowledge(); track item){
+            <li>
+                <img [src]="item.src" [alt]="item.alt" loading="lazy" width="25px" height="27px">
+            </li>
+        }
     </ul>
 </div>
