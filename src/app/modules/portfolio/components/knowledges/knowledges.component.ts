@@ -24,9 +24,19 @@ export class KnowledgesComponent implements OnInit {
       title: 'Node.js',
     },
     {
-      src: 'assets/icons/knowledge/angular.svg',
+      src: 'assets/icons/knowledge/nestjs.png',
+      alt: 'Ícone de conhecimento em nestjs',
+      title: 'NestJS',
+    },
+    {
+      src: 'assets/icons/knowledge/angular.png',
       alt: 'Ícone de conhecimento em angular',
       title: 'Angular',
+    },
+    {
+      src: 'assets/icons/knowledge/prisma.png',
+      alt: 'Ícone de conhecimento em prisma',
+      title: 'Prisma ORM',
     },
     {
       src: 'assets/icons/knowledge/typescript.png',
@@ -34,7 +44,7 @@ export class KnowledgesComponent implements OnInit {
       title: 'Typescript',
     },
     {
-      src: 'assets/icons/knowledge/html5.svg',
+      src: 'assets/icons/knowledge/html.png',
       alt: 'Ícone de conhecimento em html5',
       title: 'HTML5',
     },
@@ -44,7 +54,7 @@ export class KnowledgesComponent implements OnInit {
       title: 'Javascript',
     },
     {
-      src: 'assets/icons/knowledge/css3.svg',
+      src: 'assets/icons/knowledge/css.svg',
       alt: 'Ícone de conhecimento em css3',
       title: 'CSS3',
     },
@@ -72,7 +82,7 @@ export class KnowledgesComponent implements OnInit {
     ) as SwiperContainer;
 
     if (width < 751) {
-      swiperElement?.setAttribute('slides-per-view', '1.5');
+      swiperElement?.setAttribute('slides-per-view', '1.6');
     }
     if (width >= 751) {
       swiperElement?.setAttribute('slides-per-view', '4.5');
