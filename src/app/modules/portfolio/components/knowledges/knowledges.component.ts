@@ -1,46 +1,83 @@
-import { Component, signal } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  HostListener,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { IKnowledge } from '../../interfaces/IKnowledge.interface';
+import { register, SwiperContainer } from 'swiper/element';
+register();
 
 @Component({
   selector: 'app-knowledges',
   standalone: true,
-  imports: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './knowledges.component.html',
-  styleUrl: './knowledges.component.scss'
+  styleUrl: './knowledges.component.scss',
 })
-export class KnowledgesComponent {
+export class KnowledgesComponent implements OnInit {
   public arrayKnowledge = signal<IKnowledge[]>([
     {
-      src: 'assets/icons/knowledge/html5.svg',
-      alt: 'Icone de conhecimento de html5'
-    },
-    {
-      src: 'assets/icons/knowledge/javascript.svg',
-      alt: 'Icone de conhecimento de javascript'
-    },
-    {
-      src: 'assets/icons/knowledge/css3.svg',
-      alt: 'Icone de conhecimento de css3'
+      src: 'assets/icons/knowledge/nodejs.png',
+      alt: 'Ícone de conhecimento em nodejs',
+      title: 'Node.js',
     },
     {
       src: 'assets/icons/knowledge/angular.svg',
-      alt: 'Icone de conhecimento de angular'
-    },
-    {
-      src: 'assets/icons/knowledge/nodejs.svg',
-      alt: 'Icone de conhecimento de nodejs'
-    },
-    {
-      src: 'assets/icons/knowledge/sass.svg',
-      alt: 'Icone de conhecimento de sass'
-    },
-    {
-      src: 'assets/icons/knowledge/csharp.png',
-      alt: 'Icone de conhecimento de html5'
+      alt: 'Ícone de conhecimento em angular',
+      title: 'Angular',
     },
     {
       src: 'assets/icons/knowledge/typescript.png',
-      alt: 'Icone de conhecimento de typescript'
+      alt: 'Ícone de conhecimento em typescript',
+      title: 'Typescript',
+    },
+    {
+      src: 'assets/icons/knowledge/html5.svg',
+      alt: 'Ícone de conhecimento em html5',
+      title: 'HTML5',
+    },
+    {
+      src: 'assets/icons/knowledge/javascript.svg',
+      alt: 'Ícone de conhecimento em javascript',
+      title: 'Javascript',
+    },
+    {
+      src: 'assets/icons/knowledge/css3.svg',
+      alt: 'Ícone de conhecimento em css3',
+      title: 'CSS3',
+    },
+    {
+      src: 'assets/icons/knowledge/sass.svg',
+      alt: 'Ícone de conhecimento em sass',
+      title: 'Sass',
+    },
+  ]);
+
+  ngOnInit(): void {
+    const width = window.innerWidth;
+    this.updateSlidesPerView(width);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const width = (event.target as Window).innerWidth;
+    this.updateSlidesPerView(width);
+  }
+
+  private updateSlidesPerView(width: number) {
+    const swiperElement = document.getElementById(
+      'knowledge-icons-container'
+    ) as SwiperContainer;
+
+    if (width < 751) {
+      swiperElement?.setAttribute('slides-per-view', '1.5');
     }
-  ])
+    if (width >= 751) {
+      swiperElement?.setAttribute('slides-per-view', '4.5');
+    }
+
+    swiperElement?.initialize();
+  }
 }

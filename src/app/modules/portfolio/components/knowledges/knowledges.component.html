@@ -1,10 +1,27 @@
 <div class="container">
-    <h2>Conhecimentos</h2>
-    <ul>
-        @for(item of arrayKnowledge(); track item){
-            <li>
-                <img [src]="item.src" [alt]="item.alt" loading="lazy" width="25px" height="27px">
-            </li>
-        }
-    </ul>
+  <h2>Skills</h2>
+  <swiper-container
+    id="knowledge-icons-container"
+    init="false"
+    loop="false"
+    space-between="35"
+  >
+    @for(item of arrayKnowledge(); track item){
+    <swiper-slide>
+      <figure>
+        <img
+          [src]="item.src"
+          [alt]="item.alt"
+          loading="lazy"
+          width="124px"
+          height="133px"
+        />
+
+        <figcaption>
+          <strong>{{ item.title }}</strong>
+        </figcaption>
+      </figure>
+    </swiper-slide>
+    }
+  </swiper-container>
 </div>

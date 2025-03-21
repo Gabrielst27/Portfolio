@@ -1,5 +1,6 @@
 :host{
-  margin-top: 25px;
+  padding: 25px;
+  background: var(--black-010);
 
   display: flex;
   justify-content: center;
@@ -14,7 +15,7 @@
   details{
     overflow: hidden;
     margin-top: 10px;
-    background: var(--black-010);
+    background: var(--black);
     border-radius: 7px;
 
     article, summary{

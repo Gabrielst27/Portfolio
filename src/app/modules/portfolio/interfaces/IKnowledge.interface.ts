@@ -1,4 +1,5 @@
-export interface IKnowledge{
-    src: string
-    alt: string
+export interface IKnowledge {
+  src: string;
+  alt: string;
+  title: string;
 }
