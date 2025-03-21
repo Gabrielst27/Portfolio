@@ -54,13 +54,14 @@
                 height: 77px;
 
                 margin: 0;
-                padding: 0;
+                padding-inline: 25px;
                 display: flex;
-                justify-content: center;
+                justify-content: fle;
                 align-items: center;
                 gap: 20px;
 
                 border: 1px solid var(--white);
+                border-radius: 7px;
 
                 figcaption{
                   a{
@@ -83,6 +84,11 @@
     }
 
     @media(max-width: 750px) {
+      header h1{
+        text-align: center;
+        font-size: 30pt;
+      }
+
       aside nav ul, section{
         flex-direction: column;
         gap: 15px;
