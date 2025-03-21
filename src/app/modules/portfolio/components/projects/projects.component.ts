@@ -6,7 +6,7 @@ import { IProjects } from '../../interfaces/IProjects.interface';
   standalone: true,
   imports: [],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
   public arrayProjects = signal<IProjects[]>([
@@ -20,9 +20,9 @@ export class ProjectsComponent {
       links: [
         {
           name: '',
-          href: ''
-        }
-      ]
-    }
-  ])
+          href: '',
+        },
+      ],
+    },
+  ]);
 }
